@@ -1,0 +1,6 @@
+framework module Pods_BoxCricket {
+  umbrella header "Pods-BoxCricket-umbrella.h"
+
+  export *
+  module * { export * }
+}
