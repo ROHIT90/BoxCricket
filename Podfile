@@ -6,12 +6,13 @@ target 'BoxCricket' do
   use_frameworks!
 
   # Pods for BoxCricket
+pod ’Firebase’
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'Firebase/RemoteConfig'
 pod 'Firebase/Crash'
-
+pod ‘Firebase/Messaging’
 
 end

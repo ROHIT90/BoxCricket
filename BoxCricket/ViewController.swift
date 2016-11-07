@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseMessaging
+import FirebaseInstanceID
 
 class ViewController: UIViewController {
 
@@ -27,6 +29,11 @@ class ViewController: UIViewController {
         //tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
+        
+        FIRMessaging.messaging().subscribe(toTopic: "/topics/news")
+        
+        let deviceVersion = UIDevice.current.systemVersion
+        print("iOS \(deviceVersion)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
