@@ -63,6 +63,10 @@ class PlayersViewController: UIViewController, UITableViewDataSource, UITableVie
 
     }
     
+    @IBAction func liveChat_TouchUpInside(_ sender: Any) {
+        performSegue(withIdentifier: "LiveChatScene", sender: nil)
+
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Vicky.count
     }

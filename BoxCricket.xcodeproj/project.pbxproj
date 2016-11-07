@@ -21,6 +21,10 @@
 		8F7939931DCBCA1B003AA781 /* totoCover.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7939921DCBCA1B003AA781 /* totoCover.png */; };
 		8F7939961DCCEC8C003AA781 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F7939941DCCEC8C003AA781 /* Model.xcdatamodeld */; };
 		8FE2949F1DD0E9C80018BC85 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 8FE2949E1DD0E9C80018BC85 /* AppIcon.appiconset */; };
+		8FE294A11DD0FD000018BC85 /* LiveUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE294A01DD0FD000018BC85 /* LiveUpdatesViewController.swift */; };
+		8FE294A31DD121300018BC85 /* firstViewBackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE294A21DD121300018BC85 /* firstViewBackImage.png */; };
+		8FE294A51DD121590018BC85 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE294A41DD121590018BC85 /* bg2.png */; };
+		8FE294A71DD122730018BC85 /* cricket-ball-on-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE294A61DD122730018BC85 /* cricket-ball-on-grass.png */; };
 		8FE9F8171DCA51D0002175B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE9F8161DCA51D0002175B6 /* AppDelegate.swift */; };
 		8FE9F8191DCA51D0002175B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE9F8181DCA51D0002175B6 /* ViewController.swift */; };
 		8FE9F81C1DCA51D0002175B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE9F81A1DCA51D0002175B6 /* Main.storyboard */; };
@@ -52,6 +56,10 @@
 		8F7939921DCBCA1B003AA781 /* totoCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = totoCover.png; sourceTree = "<group>"; };
 		8F7939951DCCEC8C003AA781 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8FE2949E1DD0E9C80018BC85 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		8FE294A01DD0FD000018BC85 /* LiveUpdatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUpdatesViewController.swift; sourceTree = "<group>"; };
+		8FE294A21DD121300018BC85 /* firstViewBackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstViewBackImage.png; sourceTree = "<group>"; };
+		8FE294A41DD121590018BC85 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
+		8FE294A61DD122730018BC85 /* cricket-ball-on-grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cricket-ball-on-grass.png"; sourceTree = "<group>"; };
 		8FE9F8131DCA51D0002175B6 /* BoxCricket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxCricket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE9F8161DCA51D0002175B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FE9F8181DCA51D0002175B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +138,9 @@
 				8F7939821DCA9DC0003AA781 /* malik.png */,
 				8F7939901DCBC8D3003AA781 /* rohitCover.png */,
 				8F7939841DCA9E3F003AA781 /* rohit.png */,
+				8FE294A21DD121300018BC85 /* firstViewBackImage.png */,
+				8FE294A61DD122730018BC85 /* cricket-ball-on-grass.png */,
+				8FE294A41DD121590018BC85 /* bg2.png */,
 				8FE9F81F1DCA51D0002175B6 /* LaunchScreen.storyboard */,
 				8FE9F8221DCA51D0002175B6 /* Info.plist */,
 				8FE9F8361DCA8324002175B6 /* CircleButton.swift */,
@@ -138,6 +149,7 @@
 				8F79398A1DCBB76D003AA781 /* VishalViewController.swift */,
 				8F79398C1DCBB783003AA781 /* TotoViewController.swift */,
 				8F7939941DCCEC8C003AA781 /* Model.xcdatamodeld */,
+				8FE294A01DD0FD000018BC85 /* LiveUpdatesViewController.swift */,
 			);
 			path = BoxCricket;
 			sourceTree = "<group>";
@@ -221,12 +233,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE294A71DD122730018BC85 /* cricket-ball-on-grass.png in Resources */,
 				8FE9F8211DCA51D0002175B6 /* LaunchScreen.storyboard in Resources */,
 				8F7939931DCBCA1B003AA781 /* totoCover.png in Resources */,
 				8FE9F8291DCA58AD002175B6 /* GoogleService-Info.plist in Resources */,
+				8FE294A51DD121590018BC85 /* bg2.png in Resources */,
 				8F7939831DCA9DC0003AA781 /* malik.png in Resources */,
 				8F7939851DCA9E3F003AA781 /* rohit.png in Resources */,
 				8FE9F8351DCA814D002175B6 /* image2.png in Resources */,
+				8FE294A31DD121300018BC85 /* firstViewBackImage.png in Resources */,
 				8FE9F81E1DCA51D0002175B6 /* Assets.xcassets in Resources */,
 				8F7939911DCBC8D3003AA781 /* rohitCover.png in Resources */,
 				8F79398F1DCBC6D6003AA781 /* bck1.png in Resources */,
@@ -302,6 +317,7 @@
 				8FE9F8191DCA51D0002175B6 /* ViewController.swift in Sources */,
 				8FE9F8171DCA51D0002175B6 /* AppDelegate.swift in Sources */,
 				8F7939891DCB83D0003AA781 /* RohitViewController.swift in Sources */,
+				8FE294A11DD0FD000018BC85 /* LiveUpdatesViewController.swift in Sources */,
 				8F79397B1DCA87F4003AA781 /* Constants.swift in Sources */,
 				8F7939961DCCEC8C003AA781 /* Model.xcdatamodeld in Sources */,
 			);
@@ -369,7 +385,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -412,7 +428,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
