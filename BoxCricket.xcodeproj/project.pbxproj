@@ -25,6 +25,7 @@
 		8FE294A31DD121300018BC85 /* firstViewBackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE294A21DD121300018BC85 /* firstViewBackImage.png */; };
 		8FE294A51DD121590018BC85 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE294A41DD121590018BC85 /* bg2.png */; };
 		8FE294A71DD122730018BC85 /* cricket-ball-on-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE294A61DD122730018BC85 /* cricket-ball-on-grass.png */; };
+		8FE294A91DD13D8E0018BC85 /* Medal First Place Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE294A81DD13D8E0018BC85 /* Medal First Place Filled-50.png */; };
 		8FE9F8171DCA51D0002175B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE9F8161DCA51D0002175B6 /* AppDelegate.swift */; };
 		8FE9F8191DCA51D0002175B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE9F8181DCA51D0002175B6 /* ViewController.swift */; };
 		8FE9F81C1DCA51D0002175B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FE9F81A1DCA51D0002175B6 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		8FE294A21DD121300018BC85 /* firstViewBackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstViewBackImage.png; sourceTree = "<group>"; };
 		8FE294A41DD121590018BC85 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		8FE294A61DD122730018BC85 /* cricket-ball-on-grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cricket-ball-on-grass.png"; sourceTree = "<group>"; };
+		8FE294A81DD13D8E0018BC85 /* Medal First Place Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Medal First Place Filled-50.png"; sourceTree = "<group>"; };
 		8FE9F8131DCA51D0002175B6 /* BoxCricket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxCricket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE9F8161DCA51D0002175B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FE9F8181DCA51D0002175B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				8FE294A21DD121300018BC85 /* firstViewBackImage.png */,
 				8FE294A61DD122730018BC85 /* cricket-ball-on-grass.png */,
 				8FE294A41DD121590018BC85 /* bg2.png */,
+				8FE294A81DD13D8E0018BC85 /* Medal First Place Filled-50.png */,
 				8FE9F81F1DCA51D0002175B6 /* LaunchScreen.storyboard */,
 				8FE9F8221DCA51D0002175B6 /* Info.plist */,
 				8FE9F8361DCA8324002175B6 /* CircleButton.swift */,
@@ -246,6 +249,7 @@
 				8F7939911DCBC8D3003AA781 /* rohitCover.png in Resources */,
 				8F79398F1DCBC6D6003AA781 /* bck1.png in Resources */,
 				8FE9F81C1DCA51D0002175B6 /* Main.storyboard in Resources */,
+				8FE294A91DD13D8E0018BC85 /* Medal First Place Filled-50.png in Resources */,
 				8FE2949F1DD0E9C80018BC85 /* AppIcon.appiconset in Resources */,
 				8F7939811DCA9D5E003AA781 /* vishal.png in Resources */,
 				8FE9F8331DCA7FF0002175B6 /* first.png in Resources */,

@@ -302,7 +302,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="93E-2V-2ib">
-                                <rect key="frame" x="0.0" y="537" width="375" height="77"/>
+                                <rect key="frame" x="95" y="537" width="280" height="77"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77" id="FLp-Jt-RyK"/>
@@ -310,10 +310,10 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mvpCell" id="9Wq-RZ-Ymp">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Wq-RZ-Ymp" id="cA5-Bv-y7c">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -339,6 +339,10 @@
                                     <action selector="liveChat_TouchUpInside:" destination="LK3-HJ-Pr1" eventType="touchUpInside" id="l9N-oc-kg1"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Medal First Place Filled-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="HZr-ke-s7t">
+                                <rect key="frame" x="0.0" y="537" width="95" height="77"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player of the day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDU-56-59w">
                                 <rect key="frame" x="0.0" y="495" width="375" height="43"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -359,6 +363,7 @@
                             <constraint firstItem="DHW-KE-Fy7" firstAttribute="leading" secondItem="Pnu-5Z-0mp" secondAttribute="leading" id="6tH-HF-KXP"/>
                             <constraint firstItem="93E-2V-2ib" firstAttribute="top" secondItem="yDU-56-59w" secondAttribute="bottom" constant="-1" id="7Qq-eD-1z5"/>
                             <constraint firstItem="Pnu-5Z-0mp" firstAttribute="top" secondItem="93E-2V-2ib" secondAttribute="bottom" id="B76-ol-QxH"/>
+                            <constraint firstItem="HZr-ke-s7t" firstAttribute="leading" secondItem="dfX-8d-qdi" secondAttribute="leading" id="FeO-38-ykT"/>
                             <constraint firstItem="3Gg-yv-CPr" firstAttribute="top" secondItem="Nlt-ne-UDH" secondAttribute="bottom" id="FzI-ZF-iu8"/>
                             <constraint firstItem="kkC-U7-auV" firstAttribute="leading" secondItem="2iA-DQ-3dF" secondAttribute="trailing" constant="21" id="G57-3x-fZX"/>
                             <constraint firstItem="93E-2V-2ib" firstAttribute="trailing" secondItem="Pnu-5Z-0mp" secondAttribute="trailing" id="IVJ-hp-6ov"/>
@@ -373,17 +378,20 @@
                             <constraint firstItem="2iA-DQ-3dF" firstAttribute="baseline" secondItem="kkC-U7-auV" secondAttribute="firstBaseline" id="V5c-5x-X0X"/>
                             <constraint firstItem="yDU-56-59w" firstAttribute="trailing" secondItem="93E-2V-2ib" secondAttribute="trailing" id="WdV-Ie-Bc3"/>
                             <constraint firstItem="kkC-U7-auV" firstAttribute="centerX" secondItem="yDU-56-59w" secondAttribute="centerX" id="Z3W-WA-t9A"/>
-                            <constraint firstItem="yDU-56-59w" firstAttribute="leading" secondItem="93E-2V-2ib" secondAttribute="leading" id="a9f-8M-Brv"/>
+                            <constraint firstItem="yDU-56-59w" firstAttribute="leading" secondItem="93E-2V-2ib" secondAttribute="leading" constant="-95" id="a9f-8M-Brv"/>
                             <constraint firstAttribute="trailing" secondItem="DHW-KE-Fy7" secondAttribute="trailing" id="dSY-5Z-322"/>
+                            <constraint firstItem="93E-2V-2ib" firstAttribute="leading" secondItem="HZr-ke-s7t" secondAttribute="trailing" id="dUe-GH-y5z"/>
+                            <constraint firstItem="Pnu-5Z-0mp" firstAttribute="top" secondItem="HZr-ke-s7t" secondAttribute="bottom" id="fHd-dm-gVa"/>
                             <constraint firstItem="DHW-KE-Fy7" firstAttribute="bottom" secondItem="Mef-tn-vzI" secondAttribute="top" id="hJS-D0-pQO"/>
                             <constraint firstItem="2iA-DQ-3dF" firstAttribute="top" secondItem="kkC-U7-auV" secondAttribute="top" id="kFp-TL-Ceh"/>
                             <constraint firstItem="DHW-KE-Fy7" firstAttribute="top" secondItem="dfX-8d-qdi" secondAttribute="top" id="lwj-gl-0Ne"/>
                             <constraint firstItem="DHW-KE-Fy7" firstAttribute="trailing" secondItem="93E-2V-2ib" secondAttribute="trailing" id="olF-VJ-Hk9"/>
                             <constraint firstItem="3Gg-yv-CPr" firstAttribute="trailing" secondItem="2iA-DQ-3dF" secondAttribute="trailing" id="opg-5n-ZVm"/>
                             <constraint firstItem="jgM-1G-tkg" firstAttribute="baseline" secondItem="3Gg-yv-CPr" secondAttribute="firstBaseline" id="sjG-Ik-5qL"/>
+                            <constraint firstItem="HZr-ke-s7t" firstAttribute="top" secondItem="93E-2V-2ib" secondAttribute="top" id="tHx-Rm-Hdq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9mX-Jg-JRg" secondAttribute="trailing" constant="19" id="ub1-TV-shc"/>
                             <constraint firstItem="jgM-1G-tkg" firstAttribute="top" secondItem="9mX-Jg-JRg" secondAttribute="top" id="xfc-Dk-6xS"/>
-                            <constraint firstItem="93E-2V-2ib" firstAttribute="leading" secondItem="Pnu-5Z-0mp" secondAttribute="leading" id="yRi-Vx-vHB"/>
+                            <constraint firstItem="93E-2V-2ib" firstAttribute="leading" secondItem="Pnu-5Z-0mp" secondAttribute="leading" constant="95" id="yRi-Vx-vHB"/>
                             <constraint firstItem="3Gg-yv-CPr" firstAttribute="leading" secondItem="dfX-8d-qdi" secondAttribute="leadingMargin" id="z4a-jb-6UD"/>
                         </constraints>
                     </view>
@@ -766,6 +774,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Medal First Place Filled-50.png" width="50" height="50"/>
         <image name="bck1.png" width="800" height="600"/>
         <image name="cricket-ball-on-grass.png" width="560" height="560"/>
         <image name="malik.png" width="969" height="2022"/>
