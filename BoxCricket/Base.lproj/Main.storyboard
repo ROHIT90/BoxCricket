@@ -43,9 +43,9 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFa-h6-fHc" customClass="CircleButton" customModule="BoxCricket" customModuleProvider="target">
-                                <rect key="frame" x="87" y="283" width="100" height="100"/>
+                                <rect key="frame" x="87" y="315" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -59,12 +59,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A50-xZ-YH4" customClass="CircleButton" customModule="BoxCricket" customModuleProvider="target">
-                                <rect key="frame" x="188" y="283" width="100" height="100"/>
+                                <rect key="frame" x="188" y="315" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="0KC-fK-8In"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -77,13 +77,24 @@
                                     <action selector="signUp_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hGJ-33-sP1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHp-2M-lho">
+                                <rect key="frame" x="87" y="240" width="201" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Remember me" image="Unchecked Circle Filled-50.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rememberMeButton_TouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sCh-p0-hlO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="o1p-uL-CeO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="87" id="03t-Fa-0hL"/>
                             <constraint firstItem="A50-xZ-YH4" firstAttribute="top" secondItem="UFa-h6-fHc" secondAttribute="bottom" constant="-100" id="1W4-ku-nhw"/>
                             <constraint firstAttribute="trailing" secondItem="8WP-DF-adb" secondAttribute="trailing" constant="87" id="2a8-jL-Vzk"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A50-xZ-YH4" secondAttribute="bottom" constant="284" id="3l3-c2-erP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A50-xZ-YH4" secondAttribute="bottom" constant="252" id="3l3-c2-erP"/>
+                            <constraint firstItem="yHp-2M-lho" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="87" id="AuZ-9i-Rs3"/>
                             <constraint firstItem="cTU-ZV-fs9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="D0r-He-fKp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cTU-ZV-fs9" secondAttribute="bottom" id="DPQ-R0-7mP"/>
                             <constraint firstItem="A50-xZ-YH4" firstAttribute="trailing" secondItem="UFa-h6-fHc" secondAttribute="trailing" constant="101" id="H5L-1K-Jk5"/>
@@ -93,14 +104,18 @@
                             <constraint firstItem="UFa-h6-fHc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="87" id="MUa-wg-wkQ"/>
                             <constraint firstItem="cTU-ZV-fs9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RkO-Ne-03Q"/>
                             <constraint firstItem="8WP-DF-adb" firstAttribute="top" secondItem="o1p-uL-CeO" secondAttribute="bottom" constant="32" id="Yx4-F3-NCm"/>
-                            <constraint firstItem="UFa-h6-fHc" firstAttribute="top" secondItem="8WP-DF-adb" secondAttribute="bottom" constant="72" id="b4R-gL-DRi"/>
+                            <constraint firstItem="A50-xZ-YH4" firstAttribute="top" secondItem="yHp-2M-lho" secondAttribute="bottom" constant="27" id="aa1-3q-lqN"/>
+                            <constraint firstItem="UFa-h6-fHc" firstAttribute="top" secondItem="8WP-DF-adb" secondAttribute="bottom" constant="104" id="b4R-gL-DRi"/>
                             <constraint firstAttribute="trailing" secondItem="UFa-h6-fHc" secondAttribute="trailing" constant="188" id="efv-It-D7P"/>
+                            <constraint firstAttribute="trailing" secondItem="yHp-2M-lho" secondAttribute="trailing" constant="87" id="eyH-RG-FDZ"/>
                             <constraint firstAttribute="trailing" secondItem="cTU-ZV-fs9" secondAttribute="trailing" id="sge-pS-Ev3"/>
                             <constraint firstItem="8WP-DF-adb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="87" id="v5e-qp-yi8"/>
+                            <constraint firstItem="yHp-2M-lho" firstAttribute="top" secondItem="8WP-DF-adb" secondAttribute="bottom" constant="29" id="yY1-jD-WWH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="8WP-DF-adb" id="HDf-P3-VYF"/>
+                        <outlet property="rememeberMeButton" destination="yHp-2M-lho" id="dPN-p0-ut4"/>
                         <outlet property="signInButton" destination="UFa-h6-fHc" id="ChJ-zY-eEx"/>
                         <outlet property="signUpButton" destination="A50-xZ-YH4" id="ytN-x5-Lm1"/>
                         <outlet property="usernameTextField" destination="o1p-uL-CeO" id="pDs-Aw-Pc2"/>
@@ -697,7 +712,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KO1-w5-yEH" id="5de-dX-HfA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -775,6 +790,7 @@
     </scenes>
     <resources>
         <image name="Medal First Place Filled-50.png" width="50" height="50"/>
+        <image name="Unchecked Circle Filled-50.png" width="50" height="50"/>
         <image name="bck1.png" width="800" height="600"/>
         <image name="cricket-ball-on-grass.png" width="560" height="560"/>
         <image name="malik.png" width="969" height="2022"/>

@@ -19,7 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
-
+    @IBOutlet weak var rememeberMeButton: UIButton!
+    
+    var rememberMe = false
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,38 @@ class ViewController: UIViewController {
         
         let deviceVersion = UIDevice.current.systemVersion
         print("iOS \(deviceVersion)")
+        
+       
+        
+
+        if rememberMe == true {
+            readUsername()
+        } else {
+            rememeberMeButton.setImage(UIImage(named: "Unchecked Circle Filled-50.png"), for: UIControlState.normal)
+
+        }
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            readUsername()
+
+        
+        
+        
+    }
+    
+    func readUsername() {
+
+        let prefs = UserDefaults.standard
+        
+        if let nameUser = prefs.string(forKey: "userName"){
+            rememeberMeButton.setImage(UIImage(named: "Checked Filled-50.png"), for: UIControlState.normal)
+            usernameTextField.text = nameUser
+            
+            print("The user has a city defined: " + nameUser)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,6 +111,9 @@ class ViewController: UIViewController {
 
             actInd.stopAnimating()
         }
+        
+        usernameTextField.text = ""
+        passwordTextField.text = ""
     }
     
     @IBAction func signUp_TouchUpInside(_ sender: Any) {
@@ -121,6 +159,29 @@ class ViewController: UIViewController {
     
     func activityIndicatorDisplay() {
         
+    }
+    
+    @IBAction func rememberMeButton_TouchUpInside(_ sender: Any) {
+        
+        if (rememberMe == true) {
+            rememberMe = false
+
+            rememeberMeButton.setImage(UIImage(named: "Unchecked Circle Filled-50.png"), for: UIControlState.normal)
+
+            let prefs = UserDefaults.standard
+            prefs.removeObject(forKey: "userName")
+
+            
+        } else {
+            rememberMe = true
+            
+            rememeberMeButton.setImage(UIImage(named: "Checked Filled-50.png"), for: UIControlState.normal)
+            let prefs = UserDefaults.standard
+
+            prefs.setValue(usernameTextField.text, forKey: "userName")
+
+        }
+
     }
 }
 
