@@ -69,6 +69,7 @@ UITextFieldDelegate {
     @IBAction func sendMessage_TouchUpInside(_ sender: Any) {
         textFieldShouldReturn(messageTextField)
         self.view.endEditing(true)
+        messageTextField.text = ""
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
