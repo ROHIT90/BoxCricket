@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F3945921DD396400087A798 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3945911DD396400087A798 /* WeatherViewController.swift */; };
+		8F3945941DD397640087A798 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F3945931DD397640087A798 /* SwiftyJSON.framework */; };
 		8F79397B1DCA87F4003AA781 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79397A1DCA87F4003AA781 /* Constants.swift */; };
 		8F79397D1DCA88CC003AA781 /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F79397C1DCA88CC003AA781 /* PlayersViewController.swift */; };
 		8F7939811DCA9D5E003AA781 /* vishal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F7939801DCA9D5E003AA781 /* vishal.png */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		331EE7ABE5181B6EB6C964EA /* Pods_BoxCricket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoxCricket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		848C12288790F657C373E06E /* Pods-BoxCricket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoxCricket.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoxCricket/Pods-BoxCricket.debug.xcconfig"; sourceTree = "<group>"; };
+		8F3945911DD396400087A798 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		8F3945931DD397640087A798 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/BoxCricket-dkvfefnjidlfqpgwhxixllrfmotj/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		8F79397A1DCA87F4003AA781 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8F79397C1DCA88CC003AA781 /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersViewController.swift; path = ../PlayersViewController.swift; sourceTree = "<group>"; };
 		8F7939801DCA9D5E003AA781 /* vishal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vishal.png; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3945941DD397640087A798 /* SwiftyJSON.framework in Frameworks */,
 				E5ABC7C15142972263146084 /* Pods_BoxCricket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +112,7 @@
 		8FE9F80A1DCA51CF002175B6 = {
 			isa = PBXGroup;
 			children = (
+				8F3945911DD396400087A798 /* WeatherViewController.swift */,
 				8FE9F8151DCA51D0002175B6 /* BoxCricket */,
 				8FE9F8141DCA51D0002175B6 /* Products */,
 				4A831376E1EBF404E72E9406 /* Pods */,
@@ -166,6 +172,7 @@
 		9C69F846BB3F05B08C35561E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8F3945931DD397640087A798 /* SwiftyJSON.framework */,
 				331EE7ABE5181B6EB6C964EA /* Pods_BoxCricket.framework */,
 			);
 			name = Frameworks;
@@ -330,6 +337,7 @@
 				8FE9F8171DCA51D0002175B6 /* AppDelegate.swift in Sources */,
 				8F7939891DCB83D0003AA781 /* RohitViewController.swift in Sources */,
 				8FE294A11DD0FD000018BC85 /* LiveUpdatesViewController.swift in Sources */,
+				8F3945921DD396400087A798 /* WeatherViewController.swift in Sources */,
 				8F79397B1DCA87F4003AA781 /* Constants.swift in Sources */,
 				8F7939961DCCEC8C003AA781 /* Model.xcdatamodeld in Sources */,
 			);

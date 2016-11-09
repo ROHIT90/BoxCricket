@@ -368,6 +368,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bag-Ky-2rn" customClass="CircleButton" customModule="BoxCricket" customModuleProvider="target">
+                                <rect key="frame" x="245" y="128" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.85882352939999995" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Live Scores">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="latestNewsButton_TouchUpInside:" destination="LK3-HJ-Pr1" eventType="touchUpInside" id="SCc-Dj-zlN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.85882352939999995" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -418,6 +435,7 @@
                         <segue destination="MCX-o8-l3s" kind="show" identifier="VishalScene" id="IJw-8F-dGb"/>
                         <segue destination="3vV-DE-ROC" kind="show" identifier="TotoScene" id="AAY-fq-sgk"/>
                         <segue destination="1J2-e4-R7y" kind="show" identifier="LiveChatScene" id="zp2-O1-N6t"/>
+                        <segue destination="J6S-dw-rtq" kind="show" identifier="LatestNewsScene" id="HiV-Xk-HDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaF-Z4-lzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -786,6 +804,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61h-AY-fuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2592.8000000000002" y="138.98050974512745"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="ZkZ-u1-Rdn">
+            <objects>
+                <viewController id="J6S-dw-rtq" customClass="WeatherViewController" customModule="BoxCricket" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dtn-ob-Ra7"/>
+                        <viewControllerLayoutGuide type="bottom" id="why-cD-mk6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4fK-By-zF1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AZY-pU-2KU">
+                                <rect key="frame" x="0.0" y="70" width="375" height="564"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="8jp-E1-lvr">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8jp-E1-lvr" id="c1w-Ff-1t0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="J6S-dw-rtq" id="EpT-CL-IZz"/>
+                                    <outlet property="delegate" destination="J6S-dw-rtq" id="055-EC-LVi"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-hD-rjC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="GbG-Fi-iSb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlX-Qz-vv6">
+                                <rect key="frame" x="0.0" y="614" width="375" height="53"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="uBn-Ef-4bn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButton_touchUpInside:" destination="J6S-dw-rtq" eventType="touchUpInside" id="Fxd-uX-Hfj"/>
+                                    <action selector="doneButton_TouchUpInside:" destination="1J2-e4-R7y" eventType="touchUpInside" id="kdZ-sp-FIr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eeT-hD-rjC" firstAttribute="leading" secondItem="4fK-By-zF1" secondAttribute="leading" id="1PI-65-sxh"/>
+                            <constraint firstItem="AZY-pU-2KU" firstAttribute="trailing" secondItem="mlX-Qz-vv6" secondAttribute="trailing" id="2W4-yK-Dfp"/>
+                            <constraint firstItem="mlX-Qz-vv6" firstAttribute="top" secondItem="AZY-pU-2KU" secondAttribute="bottom" constant="-20" id="7kH-q8-aS3"/>
+                            <constraint firstItem="AZY-pU-2KU" firstAttribute="top" secondItem="dtn-ob-Ra7" secondAttribute="bottom" constant="50" id="8aa-OQ-QJQ"/>
+                            <constraint firstItem="eeT-hD-rjC" firstAttribute="trailing" secondItem="AZY-pU-2KU" secondAttribute="trailing" id="Fla-C1-6TG"/>
+                            <constraint firstItem="eeT-hD-rjC" firstAttribute="top" secondItem="4fK-By-zF1" secondAttribute="top" constant="20" id="HvL-u2-oO5"/>
+                            <constraint firstItem="mlX-Qz-vv6" firstAttribute="bottom" secondItem="why-cD-mk6" secondAttribute="top" id="V6f-tf-k0G"/>
+                            <constraint firstAttribute="trailing" secondItem="eeT-hD-rjC" secondAttribute="trailing" id="V8z-24-p1c"/>
+                            <constraint firstItem="AZY-pU-2KU" firstAttribute="leading" secondItem="mlX-Qz-vv6" secondAttribute="leading" id="Yqx-Vb-E54"/>
+                            <constraint firstItem="eeT-hD-rjC" firstAttribute="leading" secondItem="AZY-pU-2KU" secondAttribute="leading" id="gwU-Mh-n3o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="AZY-pU-2KU" id="Mx1-VA-bnP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TRW-MO-TTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3572" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>

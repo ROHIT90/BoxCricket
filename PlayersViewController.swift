@@ -8,17 +8,32 @@
 
 import UIKit
 import Firebase
+import Alamofire
+
 
 class PlayersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var ref: FIRDatabaseReference!
     var Vicky: [FIRDataSnapshot]! = []
     var msglength: NSNumber = 10
     
+    @IBOutlet weak var newsLabel: UILabel!
     fileprivate var _refHandle: FIRDatabaseHandle!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       /* let rect = CGRect(x: 320, y: 100, width: 400, height: 60) // CGFloat, Double, Int
 
+        newsLabel = UILabel(frame: rect)
+        newsLabel.text = "Your music title here"
+        self.view.addSubview(newsLabel)
+        
+        UIView.animate(withDuration: 10.0, delay: 0.0, options: [.repeat], animations: { () -> Void in
+            self.newsLabel.frame = CGRect(x:-320, y:100, width:400, height:60)
+        }, completion: { (finished: Bool) -> Void in
+            self.newsLabel.frame = CGRect(x:320, y:100, width:400, height:60)
+        });*/
         
         configureDatabase()
         configureStorage()
@@ -65,6 +80,10 @@ class PlayersViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func liveChat_TouchUpInside(_ sender: Any) {
         performSegue(withIdentifier: "LiveChatScene", sender: nil)
+
+    }
+    @IBAction func latestNewsButton_TouchUpInside(_ sender: Any) {
+        performSegue(withIdentifier: "LatestNewsScene", sender: nil)
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

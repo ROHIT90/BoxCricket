@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (4.0.1)
+  - Firebase (3.9.0):
+    - Firebase/Core (= 3.9.0)
   - Firebase/Auth (3.9.0):
     - Firebase/Core
     - FirebaseAuth (= 3.0.6)
@@ -74,8 +77,11 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.0)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.0)
   - GTMSessionFetcher/Core (1.1.7)
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Crash
@@ -83,8 +89,10 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Firebase: ff77ffb77b317c3720fef57a60e9335cebf962e6
   FirebaseAnalytics: 6e58fc9b397664369ac7617fb0ba93fab6ba7b5b
   FirebaseAuth: 96e9674ff31d6e1f826d53e26aa003a57cab0295
@@ -99,7 +107,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: a4c151a894bbfca66a718fce0b2c7fc7b5711e9e
+PODFILE CHECKSUM: a52a77f1fc59c1f811a52638e2cd2edd95f8adfa
 
 COCOAPODS: 1.0.1

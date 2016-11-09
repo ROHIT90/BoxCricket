@@ -75,8 +75,10 @@ class RohitViewController: UIViewController,UITableViewDataSource, UITableViewDe
         let message = messageSnapshot.value as! Dictionary<String, String>
         let name = message[Constants.MessageFields.name] as String!
         let text = message[Constants.MessageFields.text] as String!
+        print("this is fucing out put\([indexPath.row])")
         cell.textLabel?.text = name! + ": " + text!
         cell.imageView?.image = UIImage(named: "ic_account_circle")
+        
         if let photoURL = message[Constants.MessageFields.photoURL], let URL = URL(string: photoURL), let data = try? Data(contentsOf: URL) {
             cell.imageView?.image = UIImage(data: data)
         }
