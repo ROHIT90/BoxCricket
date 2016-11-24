@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MarqueeLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BoxCricket.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0E7D1EFF1D51CC9945FC56699E2019A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>23BA9083ED0D2392A167A8AFA04427FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>677161E85895A01F842D77502053E24C</key>
+		<key>3B5B7F7A656A4DCAB2372AF2969124B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA517496127B5C51B43B2845160B4247</key>
+		<key>F784FD197C2BAC6EC77EC272C2F55DB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

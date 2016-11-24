@@ -19,6 +19,7 @@ pod 'Firebase/Crash'
 pod ‘Firebase/Messaging’
 pod 'Alamofire', '~> 4.0'
 pod 'SwiftyJSON'
+pod 'MarqueeLabel/Swift'
 end
 
 post_install do |installer|

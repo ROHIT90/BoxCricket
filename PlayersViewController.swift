@@ -11,42 +11,29 @@ import Firebase
 import Alamofire
 
 
-class PlayersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class PlayersViewController: UIViewController, UITextFieldDelegate {
+    
     var ref: FIRDatabaseReference!
-    var Vicky: [FIRDataSnapshot]! = []
-    var msglength: NSNumber = 10
+    var player: [FIRDataSnapshot]! = []
     
     @IBOutlet weak var newsLabel: UILabel!
+    @IBOutlet weak var playerOfTheDayLabel: UILabel!
     fileprivate var _refHandle: FIRDatabaseHandle!
-    @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidLoad() {
+    @IBOutlet weak var playerOfTheDayOutputLabel: UILabel!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var cancelUpdateButton: UIButton!
+
+    @IBOutlet weak var playerOfTheDayTextField: UITextField!
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
-       /* let rect = CGRect(x: 320, y: 100, width: 400, height: 60) // CGFloat, Double, Int
-
-        newsLabel = UILabel(frame: rect)
-        newsLabel.text = "Your music title here"
-        self.view.addSubview(newsLabel)
-        
-        UIView.animate(withDuration: 10.0, delay: 0.0, options: [.repeat], animations: { () -> Void in
-            self.newsLabel.frame = CGRect(x:-320, y:100, width:400, height:60)
-        }, completion: { (finished: Bool) -> Void in
-            self.newsLabel.frame = CGRect(x:320, y:100, width:400, height:60)
-        });*/
-        
         configureDatabase()
-        configureStorage()
-        configureRemoteConfig()
-        fetchConfig()
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
     @IBAction func LogOut_TouchUp_Inside(_ sender: Any)
     {
         let firebaseAuth = FIRAuth.auth()
@@ -59,75 +46,111 @@ class PlayersViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
 
-    @IBAction func vishalDetails_TouchUpInside(_ sender: Any) {
+
+    @IBAction func savePlayer_TouchUpInside(_ sender: Any)
+    {
+        textFieldShouldReturn(playerOfTheDayTextField)
+        self.view.endEditing(true)
+        playerOfTheDayTextField.text = ""
+        self.playerOfTheDayTextField.isHidden = true
+        self.sendButton.isHidden = true
+        self.cancelUpdateButton.isHidden = true
+    }
+    
+    @IBAction func vishalDetails_TouchUpInside(_ sender: Any)
+    {
         performSegue(withIdentifier: "PlayerDetailsScene", sender: nil)
 
     }
 
-    @IBAction func rohitButton_TouchUpInside(_ sender: Any) {
+    @IBAction func rohitButton_TouchUpInside(_ sender: Any)
+    {
         performSegue(withIdentifier: "RohitScene", sender: nil)
 
     }
-    @IBAction func vishal_TouchUpInside(_ sender: Any) {
+    
+    @IBAction func vishal_TouchUpInside(_ sender: Any)
+    {
         performSegue(withIdentifier: "VishalScene", sender: nil)
 
     }
     
-    @IBAction func totoTouchUpInside(_ sender: Any) {
+    @IBAction func totoTouchUpInside(_ sender: Any)
+    {
         performSegue(withIdentifier: "TotoScene", sender: nil)
 
     }
     
-    @IBAction func liveChat_TouchUpInside(_ sender: Any) {
+    @IBAction func liveChat_TouchUpInside(_ sender: Any)
+    {
         performSegue(withIdentifier: "LiveChatScene", sender: nil)
 
     }
-    @IBAction func latestNewsButton_TouchUpInside(_ sender: Any) {
+    
+    @IBAction func latestNewsButton_TouchUpInside(_ sender: Any)
+    {
         performSegue(withIdentifier: "LatestNewsScene", sender: nil)
 
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Vicky.count
+
+    @IBAction func editButton_TouchupInside(_ sender: Any)
+    {
+        self.playerOfTheDayTextField.isHidden = false
+        self.sendButton.isHidden = false
+        self.cancelUpdateButton.isHidden = false
+        playerOfTheDayTextField.becomeFirstResponder()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Dequeue cell
-        let cell = self.tableView .dequeueReusableCell(withIdentifier: "mvpCell", for: indexPath)
-        // Unpack message from Firebase DataSnapshot
-        let messageSnapshot: FIRDataSnapshot! = self.Vicky[indexPath.row]
-        let message = messageSnapshot.value as! Dictionary<String, String>
-        let name = message[Constants.MessageFields.name] as String!
-        let text = message[Constants.MessageFields.text] as String!
-        cell.textLabel?.text = name! + ": " + text!
-        cell.imageView?.image = UIImage(named: "ic_account_circle")
-        if let photoURL = message[Constants.MessageFields.photoURL], let URL = URL(string: photoURL), let data = try? Data(contentsOf: URL) {
-            cell.imageView?.image = UIImage(data: data)
-        }
-        return cell
+    @IBAction func cancelButton_TouchupInside(_ sender: Any)
+    {
+        self.playerOfTheDayTextField.isHidden = true
+        self.sendButton.isHidden = true
+        self.cancelUpdateButton.isHidden = true
+        self.view.endEditing(true)
     }
     
-    deinit {
+    deinit
+    {
         self.ref.child("BestPlayer").removeObserver(withHandle: _refHandle)
         
     }
     
     func configureDatabase() {
         ref = FIRDatabase.database().reference()
+        
         // Listen for new messages in the Firebase database
         _refHandle = self.ref.child("BestPlayer").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
             guard let strongSelf = self else { return }
-            strongSelf.Vicky.append(snapshot)
-            strongSelf.tableView.insertRows(at: [IndexPath(row: strongSelf.Vicky.count-1, section: 0)], with: .automatic)
+            strongSelf.player.append(snapshot)
+            
+            let snapshotValue = snapshot.value as? NSDictionary
+            let name = snapshotValue?["text"] as? String
+            
+            self?.playerOfTheDayOutputLabel.text = name
+            
+            print(" this is snap value: \(snapshot.value)")
+            print(snapshot.childrenCount)
+            print(" this is snap value: \(name)")
+            
         })
     }
     
-    func configureStorage() {
+    // UITextViewDelegate protocol methods
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return true }
+        let data = [Constants.MessageFields.text: text]
+        sendMessage(withData: data)
+        self.view.endEditing(true)
+        
+        return true
     }
     
-    func configureRemoteConfig() {
+    func sendMessage(withData data: [String: String])
+    {
+        var mdata = data
+        mdata[Constants.MessageFields.name] = AppState.sharedInstance.displayName
+        self.ref.child("BestPlayer").childByAutoId().setValue(mdata)
+        
     }
-    
-    func fetchConfig() {
-    }
-
+ 
 }

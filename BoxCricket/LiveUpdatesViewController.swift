@@ -92,9 +92,7 @@ UITextFieldDelegate {
     func sendMessage(withData data: [String: String]) {
         var mdata = data
         mdata[Constants.MessageFields.name] = AppState.sharedInstance.displayName
-        if let photoURL = AppState.sharedInstance.photoURL {
-            mdata[Constants.MessageFields.photoURL] = photoURL.absoluteString
-        }
+      
         // Push data to Firebase Database
         self.ref.child("messages").childByAutoId().setValue(mdata)
     }
