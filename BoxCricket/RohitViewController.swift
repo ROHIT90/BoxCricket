@@ -196,10 +196,9 @@ class RohitViewController: UIViewController {
         runsTextField.isHidden = false
         runLabel.isHidden = true
         saveRunButton.isUserInteractionEnabled = true
-        
-        
-        
+            
     }
+    
     @IBAction func closeView_TouchUpInside(_ sender: Any)
     {
         dismiss(animated: true, completion: nil)

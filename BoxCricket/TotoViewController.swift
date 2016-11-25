@@ -9,78 +9,211 @@
 import UIKit
 import Firebase
 
-class TotoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TotoViewController: UIViewController {
 
     var ref: FIRDatabaseReference!
-    var Vicky: [FIRDataSnapshot]! = []
+    var toto: [FIRDataSnapshot]! = []
     var msglength: NSNumber = 10
     
     fileprivate var _refHandle: FIRDatabaseHandle!
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var matchesTextField: UITextField!
+    @IBOutlet weak var winsTextField: UITextField!
+    @IBOutlet weak var runsTextField: UITextField!
     
-    override func viewDidLoad() {
+    @IBOutlet weak var matchLabel: UILabel!
+    @IBOutlet weak var winLabel: UILabel!
+    @IBOutlet weak var runLabel: UILabel!
+    
+    @IBOutlet weak var saveRunButton: UIButton!
+    @IBOutlet weak var saveWinButton: UIButton!
+    @IBOutlet weak var saveMatchButton: UIButton!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
-        configureDatabase()
-        configureStorage()
-        configureRemoteConfig()
-        fetchConfig()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    deinit {
-        self.ref.child("Toto").removeObserver(withHandle: _refHandle)
+        configureMatchDatabase()
+        configureRunDatabase()
+        configureWinDatabase()
         
+        saveRunButton.isUserInteractionEnabled = false
+        saveWinButton.isUserInteractionEnabled = false
+        saveMatchButton.isUserInteractionEnabled = false
     }
     
-    func configureDatabase() {
+    
+    deinit
+    {
+        self.ref.child("TotoMatches").removeObserver(withHandle: _refHandle)
+        self.ref.child("TotoRuns").removeObserver(withHandle: _refHandle)
+        self.ref.child("TotoWins").removeObserver(withHandle: _refHandle)
+    }
+    
+    func configureMatchDatabase()
+    {
         ref = FIRDatabase.database().reference()
-        // Listen for new messages in the Firebase database
-        _refHandle = self.ref.child("Toto").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+        
+        _refHandle = self.ref.child("TotoMatches").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
             guard let strongSelf = self else { return }
-            strongSelf.Vicky.append(snapshot)
-            strongSelf.tableView.insertRows(at: [IndexPath(row: strongSelf.Vicky.count-1, section: 0)], with: .automatic)
+            
+            strongSelf.toto.append(snapshot)
+            let snapshotValueForMatch = snapshot.value as? NSDictionary
+            
+            let matches = snapshotValueForMatch?["match"] as? String
+            
+            self?.matchLabel.text = ("Matches played: \(matches!)")
+            
+            
         })
     }
     
-    func configureStorage() {
+    func configureRunDatabase()
+    {
+        ref = FIRDatabase.database().reference()
+        _refHandle = self.ref.child("TotoRuns").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+            guard let strongSelf = self else { return }
+            strongSelf.toto.append(snapshot)
+            
+            let snapshotValueForRuns = snapshot.value as? NSDictionary
+            
+            let runs = snapshotValueForRuns?["runs"] as? String
+            
+            self?.runLabel.text = ("Total runs: \(runs!)")
+            
+            
+        })
     }
     
-    func configureRemoteConfig() {
+    func configureWinDatabase()
+    {
+        ref = FIRDatabase.database().reference()
+        _refHandle = self.ref.child("TotoWins").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
+            guard let strongSelf = self else { return }
+            strongSelf.toto.append(snapshot)
+            
+            let snapshotValueForRuns = snapshot.value as? NSDictionary
+            
+            let wins = snapshotValueForRuns?["wins"] as? String
+            
+            self?.winLabel.text = ("Total wins: \(wins!)")
+            
+            
+        })
     }
     
-    func fetchConfig() {
+    func updateRuns(withData data: [String: String])
+    {
+        //var mdata = data
+        //mdata[Constants.MessageFields.name] = AppState.sharedInstance.displayName
+        self.ref.child("TotoRuns").child("runs").setValue(data)
+    }
+    
+    func updateMatch(withData data: [String: String])
+    {
+        //var mdata = data
+        //mdata[Constants.MessageFields.name] = AppState.sharedInstance.displayName
+        self.ref.child("TotoMatches").child("matches").setValue(data)
+    }
+    
+    func updateWins(withData data: [String: String])
+    {
+        //var mdata = data
+        //mdata[Constants.MessageFields.name] = AppState.sharedInstance.displayName
+        self.ref.child("TotoWins").child("wins").setValue(data)
     }
     
 
+    @IBAction func updateMatches_TouchUpInside(_ sender: Any)
+    {
+        self.view.endEditing(true)
+        
+        let text = matchesTextField.text
+        let data = ["match": text]
+        updateMatch(withData: data as! [String : String])
+        
+        matchesTextField.isHidden = true
+        
+        matchLabel.isHidden = false
+        configureMatchDatabase()
+        
+        saveMatchButton.isUserInteractionEnabled = false
+        
+    }
     
-    @IBAction func closeView_TouchUpInside(_ sender: Any) {
+
+    @IBAction func updateWins_TouchUpInside(_ sender: Any)
+    {
+        self.view.endEditing(true)
+        
+        let text = winsTextField.text
+        let data = ["wins": text]
+        updateWins(withData: data as! [String : String])
+        
+        winsTextField.isHidden = true
+        
+        winLabel.isHidden = false
+        configureWinDatabase()
+        
+        saveWinButton.isUserInteractionEnabled = false
+        
+        
+    }
+    
+
+    @IBAction func updateRuns_TouchUpInside(_ sender: Any)
+    {
+        self.view.endEditing(true)
+        
+        let text = runsTextField.text
+        let data = ["runs": text]
+        updateRuns(withData: data as! [String : String])
+        
+        runsTextField.isHidden = true
+        
+        runLabel.isHidden = false
+        configureRunDatabase()
+        saveRunButton.isUserInteractionEnabled = false
+        
+    }
+    
+
+    @IBAction func editMatch_TouchUpInside(_ sender: Any)
+    {
+        matchesTextField.isHidden = false
+        matchLabel.isHidden = true
+        
+        saveMatchButton.isUserInteractionEnabled = true
+        
+        
+    }
+    
+
+    @IBAction func editWin_TouchUpInside(_ sender: Any)
+    {
+        winsTextField.isHidden = false
+        winLabel.isHidden = true
+        saveWinButton.isUserInteractionEnabled = true
+        
+        
+        
+    }
+
+    @IBAction func editRun_TouchupInside(_ sender: Any)
+    {
+        runsTextField.isHidden = false
+        runLabel.isHidden = true
+        saveRunButton.isUserInteractionEnabled = true
+        
+        
+        
+    }
+
+    
+    @IBAction func closeView_TouchUpInside(_ sender: Any)
+    {
         dismiss(animated: true, completion: nil)
 
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Vicky.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Dequeue cell
-        let cell = self.tableView .dequeueReusableCell(withIdentifier: "ClientCell", for: indexPath)
-        // Unpack message from Firebase DataSnapshot
-        let messageSnapshot: FIRDataSnapshot! = self.Vicky[indexPath.row]
-        let message = messageSnapshot.value as! Dictionary<String, String>
-        let name = message[Constants.MessageFields.name] as String!
-        let text = message[Constants.MessageFields.text] as String!
-        cell.textLabel?.text = name! + ": " + text!
-        cell.imageView?.image = UIImage(named: "ic_account_circle")
-        if let photoURL = message[Constants.MessageFields.photoURL], let URL = URL(string: photoURL), let data = try? Data(contentsOf: URL) {
-            cell.imageView?.image = UIImage(data: data)
-        }
-        return cell
-    }
-}
+   }
