@@ -25,6 +25,7 @@ class PlayersViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cancelUpdateButton: UIButton!
 
     @IBOutlet weak var playerOfTheDayTextField: UITextField!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -124,7 +125,7 @@ class PlayersViewController: UIViewController, UITextFieldDelegate {
             strongSelf.player.append(snapshot)
             
             let snapshotValue = snapshot.value as? NSDictionary
-            let name = snapshotValue?["text"] as? String
+            let name = snapshotValue?["name"] as? String
             
             self?.playerOfTheDayOutputLabel.text = name
             
@@ -138,7 +139,10 @@ class PlayersViewController: UIViewController, UITextFieldDelegate {
     // UITextViewDelegate protocol methods
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return true }
-        let data = [Constants.MessageFields.text: text]
+        
+        //toDO move everything in constatnt/////////////////////////////======================================
+        //let data = [Constants.MessageFields.text: text]
+        let data = ["name": text]
         sendMessage(withData: data)
         self.view.endEditing(true)
         
@@ -147,9 +151,13 @@ class PlayersViewController: UIViewController, UITextFieldDelegate {
     
     func sendMessage(withData data: [String: String])
     {
-        var mdata = data
+       /* var mdata = data
+
         mdata[Constants.MessageFields.name] = AppState.sharedInstance.displayName
-        self.ref.child("BestPlayer").childByAutoId().setValue(mdata)
+        self.ref.child("BestPlayer").childByAutoId().setValue(data)*/
+        self.ref.child("BestPlayer").child("best").setValue(data)
+        configureDatabase()
+
         
     }
  
